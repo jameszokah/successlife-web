@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Star } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import Image from 'next/image'
 
 export function CourseSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -60,13 +61,23 @@ export function CourseSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-200 mb-6">Take a Course</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-200 mb-6">
+            Take a Course
+          </h2>
           <div className="flex flex-wrap justify-start gap-3 mb-2">
-            {["Mathematics", "Mathematics", "Mathematics", "Mathematics", "Mathematics"].map((subject, index) => (
+            {[
+              "Mathematics",
+              "Mathematics",
+              "Mathematics",
+              "Mathematics",
+              "Mathematics",
+            ].map((subject, index) => (
               <span
                 key={index}
                 className={`bg-transparent hover:bg-primary border-2 text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer transform hover:scale-105 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-5"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
@@ -81,17 +92,23 @@ export function CourseSection() {
             <div
               key={index}
               className={`bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-20"
               }`}
               style={{
                 transitionDelay: `${index * 200 + 300}ms`,
                 transform: isVisible
                   ? "translateY(0) translateX(0) rotate(0deg)"
-                  : `translateY(50px) translateX(${index % 2 === 0 ? "-30px" : "30px"}) rotate(${index % 2 === 0 ? "-2deg" : "2deg"})`,
+                  : `translateY(50px) translateX(${
+                      index % 2 === 0 ? "-30px" : "30px"
+                    }) rotate(${index % 2 === 0 ? "-2deg" : "2deg"})`,
               }}
             >
               <div className="relative overflow-hidden group">
-                <img
+                <Image
+                  width={200}
+                  height={200}
                   src={course.image || "/placeholder.svg?height=200&width=400"}
                   alt={course.title}
                   className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -100,13 +117,19 @@ export function CourseSection() {
               </div>
 
               <div className="p-6">
-                <h3 className="font-bold text-xl text-gray-800 mb-3 leading-tight">{course.title}</h3>
+                <h3 className="font-bold text-xl text-gray-800 mb-3 leading-tight">
+                  {course.title}
+                </h3>
 
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">{course.description}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  {course.description}
+                </p>
 
                 <div className="flex items-center space-x-2 mb-6">
                   <div className="flex items-center space-x-1">
-                    <span className="font-bold text-gray-800">{course.rating}</span>
+                    <span className="font-bold text-gray-800">
+                      {course.rating}
+                    </span>
                     <div className="flex space-x-1">
                       {[...Array(5)].map((_, i) => (
                         <Star
@@ -120,7 +143,9 @@ export function CourseSection() {
                       ))}
                     </div>
                   </div>
-                  <span className="text-gray-500 text-sm">({course.reviews} reviews)</span>
+                  <span className="text-gray-500 text-sm">
+                    ({course.reviews} reviews)
+                  </span>
                 </div>
 
                 <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
@@ -146,5 +171,5 @@ export function CourseSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { useEffect, useRef, useState } from "react"
+import { Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useEffect, useRef, useState } from "react";
 
 export function Footer() {
-  const [isVisible, setIsVisible] = useState(false)
-  const footerRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const footerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
     if (footerRef.current) {
-      observer.observe(footerRef.current)
+      observer.observe(footerRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <footer ref={footerRef} className="bg-gray-50">
@@ -34,7 +34,11 @@ export function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Left Side - Logo and Navigation */}
             <div
-              className={`transform transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"}`}
+              className={`transform transition-all duration-1000 ${
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-full opacity-0"
+              }`}
             >
               {/* Logo Section */}
               <div className="flex items-center space-x-3 mb-8">
@@ -45,7 +49,9 @@ export function Footer() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-purple-600">SuccessLife</h3>
+                  <h3 className="text-2xl font-bold text-purple-600">
+                    SuccessLife
+                  </h3>
                   <p className="text-gray-600 text-sm">Your Way To Success</p>
                 </div>
               </div>
@@ -53,25 +59,33 @@ export function Footer() {
               {/* Navigation Links */}
               <div className="border-t border-gray-300 pt-6">
                 <nav className="flex flex-wrap gap-x-8 gap-y-2">
-                  {["Home", "Devotional", "Courses", "Podcast", "Get App"].map((link, index) => (
-                    <a
-                      key={link}
-                      href="#"
-                      className={`text-gray-700 hover:text-purple-600 font-medium transition-all duration-300 transform ${
-                        isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-                      }`}
-                      style={{ transitionDelay: `${index * 100 + 200}ms` }}
-                    >
-                      {link}
-                    </a>
-                  ))}
+                  {["Home", "Devotional", "Courses", "Podcast", "Get App"].map(
+                    (link, index) => (
+                      <a
+                        key={link}
+                        href="#"
+                        className={`text-gray-700 hover:text-purple-600 font-medium transition-all duration-300 transform ${
+                          isVisible
+                            ? "translate-y-0 opacity-100"
+                            : "translate-y-4 opacity-0"
+                        }`}
+                        style={{ transitionDelay: `${index * 100 + 200}ms` }}
+                      >
+                        {link}
+                      </a>
+                    )
+                  )}
                 </nav>
               </div>
             </div>
 
             {/* Right Side - Contact and Newsletter */}
             <div
-              className={`transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+              className={`transform transition-all duration-1000 delay-300 ${
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-full opacity-0"
+              }`}
             >
               {/* Contact Info */}
               <div className="mb-8">
@@ -80,15 +94,21 @@ export function Footer() {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-800 font-medium">successlifeapp@gmail.com</p>
-                    <p className="text-gray-800 font-medium">+233 00 000 0000</p>
+                    <p className="text-gray-800 font-medium">
+                      successlifeapp@gmail.com
+                    </p>
+                    <p className="text-gray-800 font-medium">
+                      +233 00 000 0000
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Newsletter Signup */}
               <div>
-                <h4 className="text-xl font-bold text-gray-800 mb-4">Don't Miss A Beat, Subscribe Now</h4>
+                <h4 className="text-xl font-bold text-gray-800 mb-4">
+                  Don&apos;t Miss A Beat, Subscribe Now
+                </h4>
                 <div className="flex gap-3">
                   <Input
                     type="email"
@@ -107,7 +127,11 @@ export function Footer() {
         {/* Bottom Section - Purple Background */}
         <div className="bg-purple-600 -mx-4 px-4">
           <div
-            className={`py-6 flex flex-col md:flex-row justify-between items-center transform transition-all duration-1000 delay-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
+            className={`py-6 flex flex-col md:flex-row justify-between items-center transform transition-all duration-1000 delay-500 ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
+            }`}
           >
             {/* Footer Links */}
             <div className="flex space-x-8 mb-4 md:mb-0">
@@ -116,7 +140,9 @@ export function Footer() {
                   key={link}
                   href="#"
                   className={`text-white hover:text-purple-200 transition-all duration-300 transform ${
-                    isVisible ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+                    isVisible
+                      ? "translate-x-0 opacity-100"
+                      : "-translate-x-4 opacity-0"
                   }`}
                   style={{ transitionDelay: `${index * 100 + 600}ms` }}
                 >
@@ -127,7 +153,11 @@ export function Footer() {
 
             {/* Copyright */}
             <p
-              className={`text-white text-sm transform transition-all duration-1000 delay-700 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}`}
+              className={`text-white text-sm transform transition-all duration-1000 delay-700 ${
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-4 opacity-0"
+              }`}
             >
               ©2025 Success Life App | All Rights Reserved
             </p>
@@ -135,5 +165,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

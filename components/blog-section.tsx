@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Clock, User } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image";
 
 export function BlogSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -88,13 +89,17 @@ export function BlogSection() {
                 <div
                   key={index}
                   className={`group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100 ${
-                    isVisible ? "animate-slideInLeft" : "opacity-0 translate-x-[-50px]"
+                    isVisible
+                      ? "animate-slideInLeft"
+                      : "opacity-0 translate-x-[-50px]"
                   }`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="flex flex-col md:flex-row">
                     <div className="md:w-2/5 relative overflow-hidden">
-                      <img
+                      <Image
+                        width={200}
+                        height={200}
                         src={post.image || "/placeholder.svg"}
                         alt={post.title}
                         className="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -120,7 +125,9 @@ export function BlogSection() {
                             <span className="text-sm">{post.date}</span>
                           </div>
                         </div>
-                        <p className="text-gray-600 text-lg leading-relaxed mb-6">{post.excerpt}</p>
+                        <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                          {post.excerpt}
+                        </p>
                       </div>
                       <div>
                         <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:scale-105">
@@ -136,7 +143,9 @@ export function BlogSection() {
               <Button
                 variant="outline"
                 className={`text-purple-600 border-2 border-purple-600 hover:bg-purple-600 hover:text-white bg-transparent px-8 py-3 rounded-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:scale-105 ${
-                  isVisible ? "animate-slideInUp" : "opacity-0 translate-y-[30px]"
+                  isVisible
+                    ? "animate-slideInUp"
+                    : "opacity-0 translate-y-[30px]"
                 }`}
                 style={{ animationDelay: `${posts.length * 200 + 200}ms` }}
               >
@@ -145,12 +154,18 @@ export function BlogSection() {
             </div>
           </div>
           <div
-            className={`space-y-8 ${isVisible ? "animate-slideInRight" : "opacity-0 translate-x-[50px]"}`}
+            className={`space-y-8 ${
+              isVisible
+                ? "animate-slideInRight"
+                : "opacity-0 translate-x-[50px]"
+            }`}
             style={{ animationDelay: "400ms" }}
           >
             <div>
               <h3 className="font-bold text-gray-800 mb-4">CATEGORY ONE</h3>
-              <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white mb-2">CATEGORY TWO</Button>
+              <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white mb-2">
+                CATEGORY TWO
+              </Button>
               <Button
                 variant="outline"
                 className="w-full text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white mb-2 bg-transparent"
@@ -165,10 +180,14 @@ export function BlogSection() {
               </Button>
             </div>
             <div>
-              <h3 className="font-bold text-gray-800 mb-4">Recommended Audios</h3>
+              <h3 className="font-bold text-gray-800 mb-4">
+                Recommended Audios
+              </h3>
               <div className="grid grid-cols-2 gap-2 mb-4">
                 {Array.from({ length: 6 }).map((_, index) => (
-                  <img
+                  <Image
+                    width={200}
+                    height={200}
                     key={index}
                     src="/audio-thumbnail.png"
                     alt="Audio thumbnail"
@@ -184,7 +203,9 @@ export function BlogSection() {
                   <div
                     key={index}
                     className={`bg-purple-50 rounded-xl p-4 hover:bg-purple-100 transition-all duration-300 cursor-pointer group ${
-                      isVisible ? "animate-slideInRight" : "opacity-0 translate-x-[30px]"
+                      isVisible
+                        ? "animate-slideInRight"
+                        : "opacity-0 translate-x-[30px]"
                     }`}
                     style={{ animationDelay: `${600 + index * 150}ms` }}
                   >
@@ -193,10 +214,14 @@ export function BlogSection() {
                         <h4 className="text-base font-bold text-gray-900 leading-tight mb-2 group-hover:text-purple-700 transition-colors duration-300">
                           {post.title}
                         </h4>
-                        <p className="text-sm text-gray-500 font-medium">{post.subtitle}</p>
+                        <p className="text-sm text-gray-500 font-medium">
+                          {post.subtitle}
+                        </p>
                       </div>
                       <div className="flex-shrink-0">
-                        <img
+                        <Image
+                          width={200}
+                          height={200}
                           src={post.image || "/placeholder.svg"}
                           alt={post.title}
                           className="w-20 h-16 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
@@ -211,5 +236,5 @@ export function BlogSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }
