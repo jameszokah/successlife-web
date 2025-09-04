@@ -164,10 +164,10 @@ export function AppPromotion() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-base font-normal rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <Button className="bg-black hover:bg-gray-800 text-white px-8 py-5 text-base font-normal rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   Google Play Store
                 </Button>
-                <Button className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-base font-normal rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <Button className="bg-black hover:bg-gray-800 text-white px-8 py-5 text-base font-normal rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   iOS App Store
                 </Button>
               </div>

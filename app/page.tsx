@@ -7,9 +7,9 @@ import { HeroSection } from "@/components/hero-section"
 import { WisdomNugget } from "@/components/wisdom-nugget"
 import { AppPromotion } from "@/components/app-promotion"
 import { PodcastSection } from "@/components/podcast-section"
-// import { CourseSection } from "@/components/course-section"
-// import { BlogSection } from "@/components/blog-section"
-// import { Footer } from "@/components/footer"
+import { CourseSection } from "@/components/course-section"
+import { BlogSection } from "@/components/blog-section"
+import { Footer } from "@/components/footer"
 
 export default function HomePage() {
   useEffect(() => {
@@ -47,14 +47,14 @@ export default function HomePage() {
         <div className="animate-on-scroll">
           <PodcastSection />
         </div>
-        {/* <div className="animate-on-scroll">
+        <div className="animate-on-scroll">
           <CourseSection />
         </div>
         <div className="animate-on-scroll">
           <BlogSection />
-        </div> */}
+        </div>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

@@ -16,7 +16,7 @@ export function CourseSection() {
         "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       rating: 4.8,
       reviews: 238,
-      image: "/laptop-with-holographic-educational-icons.png",
+      image: "/person-working-on-dual-monitors-coding.png",
     },
     {
       title: "Course 1: Title Here & Many More Allowed",
@@ -34,7 +34,7 @@ export function CourseSection() {
       reviews: 238,
       image: "/person-working-on-dual-monitors-coding.png",
     },
-  ]
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,7 +64,7 @@ export function CourseSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-200 mb-6">
             Take a Course
           </h2>
-          <div className="flex flex-wrap justify-start gap-3 mb-2">
+          <div className="flex flex-wrap justify-start gap-3 mb-2 space-x-2">
             {[
               "Mathematics",
               "Mathematics",
@@ -74,7 +74,7 @@ export function CourseSection() {
             ].map((subject, index) => (
               <span
                 key={index}
-                className={`bg-transparent hover:bg-primary border-2 text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer transform hover:scale-105 ${
+                className={`bg-transparent hover:bg-indigo-900 border-2 text-white px-4 md:px-6 py-1 md:py-3 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer transform hover:scale-105 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-5"
@@ -91,7 +91,7 @@ export function CourseSection() {
           {courses.map((course, index) => (
             <div
               key={index}
-              className={`bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 ${
+              className={`bg-white rounded-br-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-20"
@@ -148,23 +148,23 @@ export function CourseSection() {
                   </span>
                 </div>
 
-                <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                {/* <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                   Enroll Now
-                </Button>
+                </Button> */}
               </div>
             </div>
           ))}
         </div>
 
         <div
-          className={`text-center transition-all duration-1000 ${
+          className={`text-center transition-all duration-1000 flex ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
           style={{ transitionDelay: "1000ms" }}
         >
           <Button
             variant="outline"
-            className="text-white border-2 border-white hover:bg-white hover:text-purple-600 bg-transparent px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="border-2 border-white bg-white text-primary px-8 py-5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             View All Courses
           </Button>

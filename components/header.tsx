@@ -2,7 +2,7 @@ import { Instagram, Facebook, Twitter, Youtube, Moon } from "lucide-react"
 
 export function Header() {
   return (
-    <div className="bg-primary text-white py-2 px-4">
+    <div className="bg-primary text-white py-2 px-4 hidden md:block">
       <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
         <div className="flex items-center space-x-4 md:space-x-6">
           <a href="#" className="hover:text-purple-200 transition-colors duration-200">

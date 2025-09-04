@@ -28,15 +28,17 @@ export function BlogSection() {
 
   const posts = [
     {
-      title: "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
+      title:
+        "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
       excerpt:
         "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       author: "Author Name",
       date: "Date of Post",
-      image: "/hands-typing-on-laptop-keyboard.png",
+      image: "/blog-post-thumbnail-with-classical-literature.png",
     },
     {
-      title: "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
+      title:
+        "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
       excerpt:
         "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       author: "Author Name",
@@ -44,7 +46,8 @@ export function BlogSection() {
       image: "/blog-post-thumbnail-with-study-materials.png",
     },
     {
-      title: "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
+      title:
+        "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
       excerpt:
         "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       author: "Author Name",
@@ -52,32 +55,36 @@ export function BlogSection() {
       image: "/blog-post-thumbnail-with-ancient-text.png",
     },
     {
-      title: "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
+      title:
+        "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
       excerpt:
         "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       author: "Author Name",
       date: "Date of Post",
       image: "/blog-post-thumbnail-with-classical-literature.png",
     },
-  ]
+  ];
 
   const featuredPosts = [
     {
-      title: "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
+      title:
+        "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
       subtitle: "Date content was added",
       image: "/featured-post-beach-scene.png",
     },
     {
-      title: "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
+      title:
+        "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
       subtitle: "Date content was added",
-      image: "/featured-post-study-scene.png",
+      image: "/blog-post-thumbnail-with-classical-literature.png",
     },
     {
-      title: "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
+      title:
+        "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
       subtitle: "Date content was added",
-      image: "/featured-post-classical-scene.png",
+      image: "/blog-post-thumbnail-with-ancient-text.png",
     },
-  ]
+  ];
 
   return (
     <div ref={sectionRef} className="bg-white py-16">
@@ -88,7 +95,7 @@ export function BlogSection() {
               {posts.map((post, index) => (
                 <div
                   key={index}
-                  className={`group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100 ${
+                  className={`group bg-white  shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden border border-gray-100 ${
                     isVisible
                       ? "animate-slideInLeft"
                       : "opacity-0 translate-x-[-50px]"
@@ -105,14 +112,14 @@ export function BlogSection() {
                         className="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold tracking-wide">
+                        <span className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold tracking-wide">
                           POST CATEGORY
                         </span>
                       </div>
                     </div>
                     <div className="md:w-3/5 p-8 flex flex-col justify-between">
                       <div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-purple-600 transition-colors duration-300">
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-primary transition-colors duration-300">
                           {post.title}
                         </h3>
                         <div className="flex items-center space-x-6 mb-4 text-gray-600">
@@ -130,7 +137,7 @@ export function BlogSection() {
                         </p>
                       </div>
                       <div>
-                        <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:scale-105">
+                        <Button className="bg-primary hover:bg-primary/70 text-white px-8 py-5 rounded-md font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:scale-105">
                           READ MORE
                         </Button>
                       </div>
@@ -139,10 +146,10 @@ export function BlogSection() {
                 </div>
               ))}
             </div>
-            <div className="mt-12 text-center">
+            <div className="mt-12 text-center flex">
               <Button
                 variant="outline"
-                className={`text-purple-600 border-2 border-purple-600 hover:bg-purple-600 hover:text-white bg-transparent px-8 py-3 rounded-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:scale-105 ${
+                className={`text-primary border-2 border-primary hover:bg-primary hover:text-white bg-transparent px-8 py-3 rounded-md font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:scale-105 ${
                   isVisible
                     ? "animate-slideInUp"
                     : "opacity-0 translate-y-[30px]"
@@ -163,18 +170,18 @@ export function BlogSection() {
           >
             <div>
               <h3 className="font-bold text-gray-800 mb-4">CATEGORY ONE</h3>
-              <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white mb-2">
+              <Button className="w-full bg-primary rounded-none hover:bg-primary/70 text-white mb-2 py-5">
                 CATEGORY TWO
               </Button>
               <Button
                 variant="outline"
-                className="w-full text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white mb-2 bg-transparent"
+                className="w-full text-primary rounded-none border-primary hover:bg-primary hover:text-white mb-2 bg-transparent py-5"
               >
                 CATEGORY THREE
               </Button>
               <Button
                 variant="outline"
-                className="w-full text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white bg-transparent"
+                className="w-full text-primary rounded-none border-primary hover:bg-primary hover:text-white bg-transparent py-5"
               >
                 CATEGORY FOUR
               </Button>
@@ -191,7 +198,7 @@ export function BlogSection() {
                     key={index}
                     src="/audio-thumbnail.png"
                     alt="Audio thumbnail"
-                    className="w-full h-20 object-cover rounded"
+                    className="w-full h-20 object-cover rounded-md cursor-pointer hover:scale-105 transition-transform duration-300"
                   />
                 ))}
               </div>
